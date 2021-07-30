@@ -1,0 +1,20 @@
+﻿@model ITGROWTEST_NEW.Models.DataContainer;
+@{
+    ViewData["Title"] = "Home";
+}
+
+Status:@Model.status
+<br />
+Total Results:@Model.totalResults
+
+@foreach (var item in Model.articles)
+{
+    <div>
+        <p>Author: @item.author</p>
+        <p>Title: @item.title</p>
+        <p style="text-align:justify">Description: @item.description <a href="@item.url" target="_blank">Read More</a></p>
+        <p>Image: <img src="@item.urlToImage" height="500px" width="700px" /></p>
+        <p>Published At: @item.publishedAt</p>
+        <p>Content: @item.content</p>
+    </div>
+}
